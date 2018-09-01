@@ -297,7 +297,6 @@
         <!--Menu View Controller-->
         <scene sceneID="sIh-Ad-xQR">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TN3-0g-F2i" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="lyV-WS-AEc" customClass="MenuViewController" customModule="MyCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bjg-uh-XoZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -342,7 +341,10 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnM-G7-Egg">
                                 <rect key="frame" x="107" y="51" width="106.5" height="173"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="Mortgage.png"/>
+                                <state key="normal" backgroundImage="mass.png"/>
+                                <connections>
+                                    <segue destination="3uD-fR-Tqr" kind="show" id="UNt-Kh-ATq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqA-PD-Fv0">
                                 <rect key="frame" x="213" y="395" width="106.5" height="173"/>
@@ -368,6 +370,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="dno-bi-j7H"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TN3-0g-F2i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="630" y="116.19718309859155"/>
         </scene>
@@ -604,19 +607,51 @@
             </objects>
             <point key="canvasLocation" x="1271.25" y="113.02816901408451"/>
         </scene>
+        <!--Mass View Controller-->
+        <scene sceneID="ixt-Z5-Rya">
+            <objects>
+                <viewController id="3uD-fR-Tqr" customClass="MassViewController" customModule="MyCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7pt-46-WwJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qnl-oY-648">
+                                <rect key="frame" x="16" y="20" width="27" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
+                                <state key="normal" title="☰">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="lyV-WS-AEc" kind="show" id="u18-Ia-QhP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Kmc-eq-sZy"/>
+                    </view>
+                    <connections>
+                        <outlet property="menu" destination="qnl-oY-648" id="i82-fu-CPu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ilv-nF-Zaa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1924" y="116"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Area.png" width="170" height="270"/>
         <image name="Calculator.png" width="170" height="269"/>
         <image name="Currency.png" width="172" height="270"/>
         <image name="Length.png" width="170" height="268"/>
-        <image name="Mortgage.png" width="170" height="270"/>
         <image name="Speed.png" width="169" height="270"/>
         <image name="Temperature.png" width="168" height="269"/>
         <image name="Time.png" width="171" height="270"/>
         <image name="Volume.png" width="170" height="270"/>
+        <image name="mass.png" width="171" height="268"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Xga-5L-jum"/>
+        <segue reference="u18-Ia-QhP"/>
     </inferredMetricsTieBreakers>
 </document>
