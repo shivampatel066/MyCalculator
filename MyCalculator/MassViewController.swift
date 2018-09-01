@@ -155,93 +155,97 @@ class MassViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         {
             result = numbersOnScreen * 0.01
         }
-            /*
+            
         //UserChoice1 == "Gramme g"
         else if userChoice1 == "Gramme g" && userChoice2 == "Kilogramme kg"
         {
-            result = numbersOnScreen *
+            result = numbersOnScreen * 0.001
         }
+            
         else if userChoice1 == "Gramme g" && userChoice2 == "Gramme g"
         {
-            result = numbersOnScreen *
+            result = numbersOnScreen
         }
         else if userChoice1 == "Gramme g" && userChoice2 == "Milligramme mg"
         {
-            result = numbersOnScreen *
+            result = numbersOnScreen * 1000
         }
         else if userChoice1 == "Gramme g" && userChoice2 == "Microgramme µg"
         {
-            result = numbersOnScreen *
+            result = numbersOnScreen * 1000000
         }
         else if userChoice1 == "Gramme g" && userChoice2 == "Quintal q"
         {
-            result = numbersOnScreen *
+            result = numbersOnScreen * 0.00001
         }
+          
         //UserChoice1 == "Milligramme mg"
         else if userChoice1 == "Milligramme mg" && userChoice2 == "Kilogramme kg"
         {
-            result = numbersOnScreen *
+            result = numbersOnScreen * 0.000001
         }
         else if userChoice1 == "Milligramme mg" && userChoice2 == "Gramme g"
         {
-            result = numbersOnScreen *
+            result = numbersOnScreen * 0.001
         }
         else if userChoice1 == "Milligramme mg" && userChoice2 == "Milligramme mg"
         {
-            result = numbersOnScreen *
+            result = numbersOnScreen
         }
         else if userChoice1 == "Milligramme mg" && userChoice2 == "Microgramme µg"
         {
-            result = numbersOnScreen *
+            result = numbersOnScreen * 1000
         }
         else if userChoice1 == "Milligramme mg" && userChoice2 == "Quintal q"
         {
-            result = numbersOnScreen *
+            result = numbersOnScreen * 0.00000001
         }
+            
         //UserChoice1 == "Microgramme µg"
         else if userChoice1 == "Microgramme µg" && userChoice2 == "Kilogramme kg"
         {
-            result = numbersOnScreen *
+            result = numbersOnScreen * 0.000000001
         }
         else if userChoice1 == "Microgramme µg" && userChoice2 == "Gramme g"
         {
-            result = numbersOnScreen *
+            result = numbersOnScreen * 0.000001
         }
         else if userChoice1 == "Microgramme µg" && userChoice2 == "Milligramme mg"
         {
-            result = numbersOnScreen *
+            result = numbersOnScreen * 0.001
         }
         else if userChoice1 == "Microgramme µg" && userChoice2 == "Microgramme µg"
         {
-            result = numbersOnScreen *
+            result = numbersOnScreen
         }
         else if userChoice1 == "Microgramme µg" && userChoice2 == "Quintal q"
         {
-            result = numbersOnScreen *
+            result = numbersOnScreen * 0.00000000001
         }
+            
         //UserChoice1 == "Quintal q"
         else if userChoice1 == "Quintal q" && userChoice2 == "Kilogramme kg"
         {
-            result = numbersOnScreen *
+            result = numbersOnScreen * 100
         }
         else if userChoice1 == "Quintal q" && userChoice2 == "Gramme g"
         {
-            result = numbersOnScreen *
+            result = numbersOnScreen * 100000
         }
         else if userChoice1 == "Quintal q" && userChoice2 == "Milligramme mg"
         {
-            result = numbersOnScreen *
+            result = numbersOnScreen * 100000000
         }
         else if userChoice1 == "Quintal q" && userChoice2 == "Microgramme µg"
         {
-            result = numbersOnScreen *
+            result = numbersOnScreen * 100000000000
         }
         else if userChoice1 == "Quintal q" && userChoice2 == "Quintal q"
         {
-            result = numbersOnScreen *
+            result = numbersOnScreen
         }
         
-        */
+        
     }
     
     func applyRoundCorner(_ Object:AnyObject)
