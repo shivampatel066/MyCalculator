@@ -9,15 +9,241 @@
 import UIKit
 
 class MassViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-
+    
+    //MARK:Properties
+    @IBOutlet weak var numberLabel2: UILabel!
+    @IBOutlet weak var numberLabel1: UILabel!
     @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var menu: UIButton!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var pickerView2: UIPickerView!
-    let units = ["Kilogramme kg", "Gramme g", "MilliGramme mg", "Microgramme µg", "Quintal q"]
+    
+    //MARK:Variables
+    let units = ["Kilogramme kg", "Gramme g", "Milligramme mg", "Microgramme µg", "Quintal q"]
+    var numbersOnScreen: Double = 0;
+    var dotCounter: Double = 0;
+    var result: Double = 0;
+    var userChoice1 = ""
+    var userChoice2 = ""
     
     //MARK:Functions
+    @IBAction func Numbers(_ sender: Any) {
+        
+        if numberLabel1.text?.count == 16 //Fatel Error Nutralizer
+        {}
+        else{
+            numberLabel1.text = numberLabel1.text! + String((sender as AnyObject).tag - 1)
+            numbersOnScreen = Double(numberLabel1.text!)!
+        }
+       
+        
+    }
+    
+    
+    @IBAction func Buttons(_ sender: UIButton) {
+        if sender.tag == 11 //Dot Button
+        {
+            if dotCounter == 0
+            {
+                numberLabel1.text = numberLabel1.text! + "."
+                dotCounter = dotCounter+1;
+            }
+            else{
+                
+            }
+        }
+            
+        else if sender.tag == 12 //AC button pressed
+        {
+            allClear()
+        }
+        
+        else if sender.tag == 13    //delete button Pressed
+        {
+            if numberLabel1.text?.last == "."
+            {
+                dotCounter = 0;
+            }
+            numberLabel1.text = String(numberLabel1.text!.dropLast())
+            numbersOnScreen = Double(numberLabel1.text!)!
+            if numberLabel1.text == ""
+            {
+                allClear()
+            }
+            
+        }
+        
+        else if sender.tag == 14    //Convert button Pressed
+        {
+            userChoice1 = label.text!
+            userChoice2 = label2.text!
+            
+            convertUnits()
+            
+            if ceil(result) == result {
+                numberLabel2.text = String(Int(result))
+                
+            if (numberLabel2.text?.count)! >= 12
+            {
+                let formatter = NumberFormatter()
+                formatter.numberStyle = .scientific
+                formatter.positiveFormat = "0.#######E0"
+                formatter.exponentSymbol = "e"
+                if let scientificFormatted = formatter.string(for: result) {
+                    numberLabel2.text = scientificFormatted  // "5e+2"
+                }
+                
+            }
+            }
+            else
+            {
+                numberLabel2.text = String(result)
+                if (numberLabel2.text?.count)! >= 12
+                {
+                    let formatter = NumberFormatter()
+                    formatter.numberStyle = .scientific
+                    formatter.positiveFormat = "0.#######E0"
+                    formatter.exponentSymbol = "e"
+                    if let scientificFormatted = formatter.string(for: result) {
+                        numberLabel2.text = scientificFormatted  // "5e+2"
+                    }
+                }
+            }
+        
+            
+            
+        }
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    //MARK:Utility Functions
+    func allClear() -> Void {
+        numberLabel1.text = ""
+        numberLabel2.text = ""
+        result = 0
+        dotCounter = 0
+    }
+    
+    func convertUnits() -> Void
+    {
+        //UserChoice1 == "Kilogramme kg"
+        if userChoice1 == "Kilogramme kg" && userChoice2 == "Kilogramme kg"
+        {
+            result = numbersOnScreen;
+        }
+        else if userChoice1 == "Kilogramme kg" && userChoice2 == "Gramme g"
+        {
+            result = numbersOnScreen * 1000
+        }
+        else if userChoice1 == "Kilogramme kg" && userChoice2 == "Milligramme mg"
+        {
+            result = numbersOnScreen * 1000000
+        }
+         
+        else if userChoice1 == "Kilogramme kg" && userChoice2 == "Microgramme µg"
+        {
+            result = numbersOnScreen * 1000000000
+        }
+        else if userChoice1 == "Kilogramme kg" && userChoice2 == "Quintal q"
+        {
+            result = numbersOnScreen * 0.01
+        }
+            /*
+        //UserChoice1 == "Gramme g"
+        else if userChoice1 == "Gramme g" && userChoice2 == "Kilogramme kg"
+        {
+            result = numbersOnScreen *
+        }
+        else if userChoice1 == "Gramme g" && userChoice2 == "Gramme g"
+        {
+            result = numbersOnScreen *
+        }
+        else if userChoice1 == "Gramme g" && userChoice2 == "Milligramme mg"
+        {
+            result = numbersOnScreen *
+        }
+        else if userChoice1 == "Gramme g" && userChoice2 == "Microgramme µg"
+        {
+            result = numbersOnScreen *
+        }
+        else if userChoice1 == "Gramme g" && userChoice2 == "Quintal q"
+        {
+            result = numbersOnScreen *
+        }
+        //UserChoice1 == "Milligramme mg"
+        else if userChoice1 == "Milligramme mg" && userChoice2 == "Kilogramme kg"
+        {
+            result = numbersOnScreen *
+        }
+        else if userChoice1 == "Milligramme mg" && userChoice2 == "Gramme g"
+        {
+            result = numbersOnScreen *
+        }
+        else if userChoice1 == "Milligramme mg" && userChoice2 == "Milligramme mg"
+        {
+            result = numbersOnScreen *
+        }
+        else if userChoice1 == "Milligramme mg" && userChoice2 == "Microgramme µg"
+        {
+            result = numbersOnScreen *
+        }
+        else if userChoice1 == "Milligramme mg" && userChoice2 == "Quintal q"
+        {
+            result = numbersOnScreen *
+        }
+        //UserChoice1 == "Microgramme µg"
+        else if userChoice1 == "Microgramme µg" && userChoice2 == "Kilogramme kg"
+        {
+            result = numbersOnScreen *
+        }
+        else if userChoice1 == "Microgramme µg" && userChoice2 == "Gramme g"
+        {
+            result = numbersOnScreen *
+        }
+        else if userChoice1 == "Microgramme µg" && userChoice2 == "Milligramme mg"
+        {
+            result = numbersOnScreen *
+        }
+        else if userChoice1 == "Microgramme µg" && userChoice2 == "Microgramme µg"
+        {
+            result = numbersOnScreen *
+        }
+        else if userChoice1 == "Microgramme µg" && userChoice2 == "Quintal q"
+        {
+            result = numbersOnScreen *
+        }
+        //UserChoice1 == "Quintal q"
+        else if userChoice1 == "Quintal q" && userChoice2 == "Kilogramme kg"
+        {
+            result = numbersOnScreen *
+        }
+        else if userChoice1 == "Quintal q" && userChoice2 == "Gramme g"
+        {
+            result = numbersOnScreen *
+        }
+        else if userChoice1 == "Quintal q" && userChoice2 == "Milligramme mg"
+        {
+            result = numbersOnScreen *
+        }
+        else if userChoice1 == "Quintal q" && userChoice2 == "Microgramme µg"
+        {
+            result = numbersOnScreen *
+        }
+        else if userChoice1 == "Quintal q" && userChoice2 == "Quintal q"
+        {
+            result = numbersOnScreen *
+        }
+        
+        */
+    }
+    
     func applyRoundCorner(_ Object:AnyObject)
     {
         Object.layer.cornerRadius = Object.frame.size.width / 2

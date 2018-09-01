@@ -44,7 +44,7 @@ class ViewController: UIViewController {
     var equalIsPressed = false
     var subStringForSavingPreviousNumbers :String = ""
     var text = ""
-    
+    var dotCounter = 0
     
     
     
@@ -217,11 +217,19 @@ class ViewController: UIViewController {
             
         else if sender.tag == 19 //Decimal Button
         {
-            label2.text = label2.text! + "."
-            if performingMath == false
+            if dotCounter == 0
             {
-                label3.text = label3.text! + "."
+                label2.text = label2.text! + "."
+                if performingMath == false
+                {
+                    label3.text = label3.text! + "."
+                }
+                dotCounter = dotCounter+1;
             }
+            else{
+                
+            }
+            
             
         }
         else if sender.tag == 13 //Percentage Button Pressed
@@ -298,6 +306,7 @@ class ViewController: UIViewController {
         label3.textColor = UIColor.gray
         label2.font = UIFont(name:"Helvetica-Light", size: 70.0)
         label2.textColor = UIColor.white
+        dotCounter = 0
         
         
         
