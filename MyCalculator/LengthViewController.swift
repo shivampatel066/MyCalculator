@@ -1,23 +1,24 @@
 //
-//  MassViewController.swift
+//  LengthViewController.swift
 //  MyCalculator
 //
-//  Created by Shivam on 01/09/18.
+//  Created by Shivam on 02/09/18.
 //  Copyright © 2018 Shivam. All rights reserved.
 //
 
 import UIKit
 
-class MassViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class LengthViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     //MARK:Properties
-    @IBOutlet weak var numberLabel2: UILabel!
-    @IBOutlet weak var numberLabel1: UILabel!
-    @IBOutlet weak var label2: UILabel!
+    
     @IBOutlet weak var menu: UIButton!
-    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var numberLabel1: UILabel!
+    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var pickerView2: UIPickerView!
+    @IBOutlet weak var numberLabel2: UILabel!
+    @IBOutlet weak var label2: UILabel!
     
     //MARK:Variables
     let units = ["Kilogramme kg", "Gramme g", "Milligramme mg", "Microgramme µg", "Quintal q"]
@@ -36,11 +37,11 @@ class MassViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     
     let converterMultiplierArray: [[Double]] = [[1, 1000, 1000000, 1000000000, 0.01], [0.001, 1, 1000, 1000000, 0.00001], [0.000001, 0.001, 1, 1000, 0.00000001], [0.000000001, 0.000001, 0.001, 1, 0.00000000001], [100, 100000, 100000000, 100000000000, 1]];
     
-    
+
     //2D Array to Store the Conversion Multipliers.
     
-    //MARK:Functions
-    @IBAction func Numbers(_ sender: Any) {
+    
+    @IBAction func Numbers(_ sender: UIButton) {
         
         if numberLabel1.text?.count == 16 //Fatel Error Nutralizer
         {}
@@ -50,12 +51,12 @@ class MassViewController: UIViewController, UIPickerViewDataSource, UIPickerView
             numberLabel1.text = numberLabel1.text! + String((sender as AnyObject).tag - 1)
             numbersOnScreen = Double(numberLabel1.text!)!
         }
-       
-        
     }
     
     
+    
     @IBAction func Buttons(_ sender: UIButton) {
+        
         if sender.tag == 11 //Dot Button
         {
             if dotCounter == 0
@@ -74,7 +75,7 @@ class MassViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         {
             allClear()
         }
-        
+            
         else if sender.tag == 13    //delete button Pressed
         {
             if numberLabel1.text?.last == "."
@@ -87,35 +88,35 @@ class MassViewController: UIViewController, UIPickerViewDataSource, UIPickerView
             {
                 allClear()
             }
-            else {
-                numbersOnScreen = Double(numberLabel1.text!)!
-            }
+            numbersOnScreen = Double(numberLabel1.text!)!
         }
-        
+            
         else if sender.tag == 14    //Convert button Pressed
         {
             userChoice1 = label.text!
             userChoice2 = label2.text!
             
+           
+            
             convertUnits()
             
             if ceil(result) == result && result < 5.5589984565e+18 //To Nutralise Fatel Error number bigger than Int.max while converting.
             {
-            
+                
                 
                 numberLabel2.text = String(Int(result))
                 
-            if (numberLabel2.text?.count)! >= 13
-            {
-                let formatter = NumberFormatter()
-                formatter.numberStyle = .scientific
-                formatter.positiveFormat = "0.########E0"
-                formatter.exponentSymbol = "e"
-                if let scientificFormatted = formatter.string(for: result) {
-                    numberLabel2.text = scientificFormatted  // "5e+2"
+                if (numberLabel2.text?.count)! >= 13
+                {
+                    let formatter = NumberFormatter()
+                    formatter.numberStyle = .scientific
+                    formatter.positiveFormat = "0.########E0"
+                    formatter.exponentSymbol = "e"
+                    if let scientificFormatted = formatter.string(for: result) {
+                        numberLabel2.text = scientificFormatted  // "5e+2"
+                    }
+                    
                 }
-                
-            }
             }
             else
             {
@@ -131,16 +132,11 @@ class MassViewController: UIViewController, UIPickerViewDataSource, UIPickerView
                     }
                 }
             }
-        
+            
             
             
         }
-        
-        
-        
-        
     }
-    
     
     
     
@@ -155,7 +151,7 @@ class MassViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     
     func convertUnits() -> Void
     {
-        result = numbersOnScreen * converterMultiplierArray[unitsDictionary[userChoice1]!][unitsDictionary[userChoice2]!];
+        result = numbersOnScreen * converterMultiplierArray[unitsDictionary[userChoice1]!][unitsDictionary[userChoice2]!]
         /*
         //UserChoice1 == "Kilogramme kg"
         if userChoice1 == "Kilogramme kg" && userChoice2 == "Kilogramme kg"
@@ -170,7 +166,7 @@ class MassViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         {
             result = numbersOnScreen * 1000000
         }
-         
+            
         else if userChoice1 == "Kilogramme kg" && userChoice2 == "Microgramme µg"
         {
             result = numbersOnScreen * 1000000000
@@ -180,7 +176,7 @@ class MassViewController: UIViewController, UIPickerViewDataSource, UIPickerView
             result = numbersOnScreen * 0.01
         }
             
-        //UserChoice1 == "Gramme g"
+            //UserChoice1 == "Gramme g"
         else if userChoice1 == "Gramme g" && userChoice2 == "Kilogramme kg"
         {
             result = numbersOnScreen * 0.001
@@ -202,8 +198,8 @@ class MassViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         {
             result = numbersOnScreen * 0.00001
         }
-          
-        //UserChoice1 == "Milligramme mg"
+            
+            //UserChoice1 == "Milligramme mg"
         else if userChoice1 == "Milligramme mg" && userChoice2 == "Kilogramme kg"
         {
             result = numbersOnScreen * 0.000001
@@ -225,7 +221,7 @@ class MassViewController: UIViewController, UIPickerViewDataSource, UIPickerView
             result = numbersOnScreen * 0.00000001
         }
             
-        //UserChoice1 == "Microgramme µg"
+            //UserChoice1 == "Microgramme µg"
         else if userChoice1 == "Microgramme µg" && userChoice2 == "Kilogramme kg"
         {
             result = numbersOnScreen * 0.000000001
@@ -247,7 +243,7 @@ class MassViewController: UIViewController, UIPickerViewDataSource, UIPickerView
             result = numbersOnScreen * 0.00000000001
         }
             
-        //UserChoice1 == "Quintal q"
+            //UserChoice1 == "Quintal q"
         else if userChoice1 == "Quintal q" && userChoice2 == "Kilogramme kg"
         {
             result = numbersOnScreen * 100
@@ -268,8 +264,9 @@ class MassViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         {
             result = numbersOnScreen
         }
+ */
         
-        */
+        
     }
     
     func applyRoundCorner(_ Object:AnyObject)
@@ -300,7 +297,7 @@ class MassViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         return units[row]
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-       
+        
         return units.count
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -313,12 +310,10 @@ class MassViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         
     }
     
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.applyRoundCorner(menu)
-
         // Do any additional setup after loading the view.
     }
 
