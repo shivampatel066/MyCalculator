@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4022D6EA213BE0A40010659F /* VolumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022D6E9213BE0A40010659F /* VolumeViewController.swift */; };
 		40A6A1E920FCBD8700F929EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A6A1E820FCBD8700F929EF /* AppDelegate.swift */; };
 		40A6A1EB20FCBD8700F929EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A6A1EA20FCBD8700F929EF /* ViewController.swift */; };
 		40A6A1EE20FCBD8700F929EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40A6A1EC20FCBD8700F929EF /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4022D6E9213BE0A40010659F /* VolumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeViewController.swift; sourceTree = "<group>"; };
 		40A6A1E520FCBD8700F929EF /* MyCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40A6A1E820FCBD8700F929EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40A6A1EA20FCBD8700F929EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				40DD087F2134535C001D9D95 /* CurrencyViewController.swift */,
 				40DC52A7213ADDBC006605EE /* MassViewController.swift */,
 				40D30FDA213BB87E005FDF2E /* LengthViewController.swift */,
+				4022D6E9213BE0A40010659F /* VolumeViewController.swift */,
 				40A6A1EC20FCBD8700F929EF /* Main.storyboard */,
 				40A6A1EF20FCBD8C00F929EF /* Assets.xcassets */,
 				40A6A1F120FCBD8D00F929EF /* LaunchScreen.storyboard */,
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4022D6EA213BE0A40010659F /* VolumeViewController.swift in Sources */,
 				40D30FDB213BB87E005FDF2E /* LengthViewController.swift in Sources */,
 				40DC52A8213ADDBC006605EE /* MassViewController.swift in Sources */,
 				40A6A1EB20FCBD8700F929EF /* ViewController.swift in Sources */,
