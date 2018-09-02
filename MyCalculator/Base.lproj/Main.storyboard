@@ -1135,10 +1135,10 @@
             </objects>
             <point key="canvasLocation" x="-99" y="821"/>
         </scene>
-        <!--View Controller-->
+        <!--Area View Controller-->
         <scene sceneID="er3-b9-qsp">
             <objects>
-                <viewController id="OB2-V5-XbU" sceneMemberID="viewController">
+                <viewController id="OB2-V5-XbU" customClass="AreaViewController" customModule="MyCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ffI-rn-cNt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1158,6 +1158,9 @@
                                 <state key="normal" title="1">
                                     <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="Numbers:" destination="OB2-V5-XbU" eventType="touchUpInside" id="FbE-QA-Jum"/>
+                                </connections>
                             </button>
                             <button tag="1" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ly0-GQ-PmP">
                                 <rect key="frame" x="0.0" y="508" width="157" height="60"/>
@@ -1167,6 +1170,9 @@
                                 <state key="normal" title="0">
                                     <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="Numbers:" destination="OB2-V5-XbU" eventType="touchUpInside" id="lrM-cZ-OsF"/>
+                                </connections>
                             </button>
                             <button tag="5" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsg-Pq-v5l">
                                 <rect key="frame" x="0.0" y="386" width="78" height="60"/>
@@ -1176,6 +1182,9 @@
                                 <state key="normal" title="4">
                                     <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="Numbers:" destination="OB2-V5-XbU" eventType="touchUpInside" id="mRK-wz-kgj"/>
+                                </connections>
                             </button>
                             <button tag="8" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hb1-sm-xXu">
                                 <rect key="frame" x="0.0" y="325" width="78" height="60"/>
@@ -1185,6 +1194,9 @@
                                 <state key="normal" title="7">
                                     <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="Numbers:" destination="OB2-V5-XbU" eventType="touchUpInside" id="SAc-2Y-PEE"/>
+                                </connections>
                             </button>
                             <button tag="3" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOx-PL-TA1">
                                 <rect key="frame" x="79" y="447" width="78" height="60"/>
@@ -1194,6 +1206,9 @@
                                 <state key="normal" title="2">
                                     <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="Numbers:" destination="OB2-V5-XbU" eventType="touchUpInside" id="WW6-w9-ry5"/>
+                                </connections>
                             </button>
                             <button tag="6" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OoB-ay-C0P">
                                 <rect key="frame" x="79" y="386" width="78" height="60"/>
@@ -1203,6 +1218,9 @@
                                 <state key="normal" title="5">
                                     <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="Numbers:" destination="OB2-V5-XbU" eventType="touchUpInside" id="ggf-7g-acI"/>
+                                </connections>
                             </button>
                             <button tag="9" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRv-0U-cFP">
                                 <rect key="frame" x="79" y="325" width="78" height="60"/>
@@ -1212,6 +1230,9 @@
                                 <state key="normal" title="8">
                                     <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="Numbers:" destination="OB2-V5-XbU" eventType="touchUpInside" id="gM0-Ml-dYB"/>
+                                </connections>
                             </button>
                             <button tag="4" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7du-js-bva">
                                 <rect key="frame" x="158" y="447" width="78" height="60"/>
@@ -1221,6 +1242,9 @@
                                 <state key="normal" title="3">
                                     <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="Numbers:" destination="OB2-V5-XbU" eventType="touchUpInside" id="se0-Jd-SBU"/>
+                                </connections>
                             </button>
                             <button tag="11" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMl-oo-Jbj">
                                 <rect key="frame" x="158" y="508" width="78" height="60"/>
@@ -1230,6 +1254,9 @@
                                 <state key="normal" title=".">
                                     <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="Buttons:" destination="OB2-V5-XbU" eventType="touchUpInside" id="W0g-fV-MgA"/>
+                                </connections>
                             </button>
                             <button tag="7" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4Z-8d-Ga2">
                                 <rect key="frame" x="158" y="386" width="78" height="60"/>
@@ -1239,6 +1266,9 @@
                                 <state key="normal" title="6">
                                     <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="Numbers:" destination="OB2-V5-XbU" eventType="touchUpInside" id="GxF-cQ-YiU"/>
+                                </connections>
                             </button>
                             <button tag="10" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SLe-f3-Ze6">
                                 <rect key="frame" x="158" y="325" width="78" height="60"/>
@@ -1248,6 +1278,9 @@
                                 <state key="normal" title="9">
                                     <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="Numbers:" destination="OB2-V5-XbU" eventType="touchUpInside" id="yJ2-8C-TT9"/>
+                                </connections>
                             </button>
                             <button tag="12" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGy-yg-f6t">
                                 <rect key="frame" x="242" y="325" width="78" height="121"/>
@@ -1257,6 +1290,9 @@
                                 <state key="normal" title="AC">
                                     <color key="titleColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="Buttons:" destination="OB2-V5-XbU" eventType="touchUpInside" id="A7b-Wg-Alr"/>
+                                </connections>
                             </button>
                             <button tag="13" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ty-I6-xJb">
                                 <rect key="frame" x="242" y="447" width="78" height="121"/>
@@ -1266,13 +1302,20 @@
                                 <state key="normal" title="⌫">
                                     <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="Buttons:" destination="OB2-V5-XbU" eventType="touchUpInside" id="XrQ-m5-3kz"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tLB-2E-EJB">
                                 <rect key="frame" x="16" y="86" width="111" height="82"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="OB2-V5-XbU" id="Z6F-nw-xYx"/>
+                                    <outlet property="delegate" destination="OB2-V5-XbU" id="Elk-pq-8tg"/>
+                                </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kilogramme kg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpA-U2-SN6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Square metre m²" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpA-U2-SN6">
                                 <rect key="frame" x="16" y="65" width="111" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
@@ -1283,8 +1326,12 @@
                                 <rect key="frame" x="16" y="223" width="111" height="87"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="OB2-V5-XbU" id="slT-6G-CFG"/>
+                                    <outlet property="delegate" destination="OB2-V5-XbU" id="cxA-ot-5My"/>
+                                </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kilogramme kg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxe-Dm-8dU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Square metre m²" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxe-Dm-8dU">
                                 <rect key="frame" x="16" y="202" width="111" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
@@ -1309,6 +1356,9 @@
                                 <rect key="frame" x="179" y="171" width="81" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="Convert Button"/>
+                                <connections>
+                                    <action selector="Buttons:" destination="OB2-V5-XbU" eventType="touchUpInside" id="vLJ-ZG-5M0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rJ-Bw-HEq">
                                 <rect key="frame" x="16" y="20" width="27" height="28"/>
@@ -1326,6 +1376,15 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="GQQ-4Z-KUa"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="ZpA-U2-SN6" id="Sd0-uk-6dy"/>
+                        <outlet property="label2" destination="xxe-Dm-8dU" id="uOF-rv-niZ"/>
+                        <outlet property="menu" destination="7rJ-Bw-HEq" id="AkQ-Gk-wCw"/>
+                        <outlet property="numberLabel1" destination="qwU-cf-a0H" id="Foq-Hc-3rb"/>
+                        <outlet property="numberLabel2" destination="mhG-Xz-UAM" id="vbs-90-yeh"/>
+                        <outlet property="pickerView" destination="tLB-2E-EJB" id="w9I-PT-zPv"/>
+                        <outlet property="pickerView2" destination="m0M-bZ-bbq" id="VSV-N3-7Mn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h3p-Lu-Lcy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2365,6 +2424,6 @@
         <image name="mass.png" width="171" height="268"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ces-6o-Au1"/>
+        <segue reference="50D-8i-hBJ"/>
     </inferredMetricsTieBreakers>
 </document>
