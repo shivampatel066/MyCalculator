@@ -21,13 +21,14 @@ class LengthViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBOutlet weak var label2: UILabel!
     
     //MARK:Variables
-    let units = ["Kilogramme kg", "Gramme g", "Milligramme mg", "Microgramme µg", "Quintal q"]
+    let units = ["Kilometre km", "Metre m", "Centimetre cm", "Millimetre mm", "Foot ft", "Inch in"]
     let unitsDictionary: [String : Int] = [
-        "Kilogramme kg" : 0,
-        "Gramme g" : 1,
-        "Milligramme mg" : 2,
-        "Microgramme µg" : 3,
-        "Quintal q" : 4
+        "Kilometre km" : 0,
+        "Metre m" : 1,
+        "Centimetre cm" : 2,
+        "Millimetre mm" : 3,
+        "Foot ft" : 4,
+        "Inch in" : 5
     ] //Dictionary to store the Units and Respective Numbers
     var numbersOnScreen: Double = 0;
     var dotCounter: Double = 0;
@@ -35,7 +36,7 @@ class LengthViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var userChoice1 = ""
     var userChoice2 = ""
     
-    let converterMultiplierArray: [[Double]] = [[1, 1000, 1000000, 1000000000, 0.01], [0.001, 1, 1000, 1000000, 0.00001], [0.000001, 0.001, 1, 1000, 0.00000001], [0.000000001, 0.000001, 0.001, 1, 0.00000000001], [100, 100000, 100000000, 100000000000, 1]];
+    let converterMultiplierArray: [[Double]] = [[1, 1000, 100000, 1000000, 3280.8399, 39370.0787], [0.001, 1, 100, 1000, 3.2808399, 39.3700787], [0.00001, 0.01, 1, 10, 0.032808399, 0.393700787], [0.000001, 0.001, 0.1, 1, 0.0032808399, 0.0393700787], [0.0003048, 0.3048, 30.48, 304.8, 1, 12], [2.54e-5, 0.0254, 2.54, 25.4, 0.0833333333, 1]];
     
 
     //2D Array to Store the Conversion Multipliers.
@@ -88,7 +89,9 @@ class LengthViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             {
                 allClear()
             }
-            numbersOnScreen = Double(numberLabel1.text!)!
+            else {
+                numbersOnScreen = Double(numberLabel1.text!)!
+            }
         }
             
         else if sender.tag == 14    //Convert button Pressed
@@ -152,119 +155,7 @@ class LengthViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     func convertUnits() -> Void
     {
         result = numbersOnScreen * converterMultiplierArray[unitsDictionary[userChoice1]!][unitsDictionary[userChoice2]!]
-        /*
-        //UserChoice1 == "Kilogramme kg"
-        if userChoice1 == "Kilogramme kg" && userChoice2 == "Kilogramme kg"
-        {
-            result = numbersOnScreen;
-        }
-        else if userChoice1 == "Kilogramme kg" && userChoice2 == "Gramme g"
-        {
-            result = numbersOnScreen * 1000
-        }
-        else if userChoice1 == "Kilogramme kg" && userChoice2 == "Milligramme mg"
-        {
-            result = numbersOnScreen * 1000000
-        }
-            
-        else if userChoice1 == "Kilogramme kg" && userChoice2 == "Microgramme µg"
-        {
-            result = numbersOnScreen * 1000000000
-        }
-        else if userChoice1 == "Kilogramme kg" && userChoice2 == "Quintal q"
-        {
-            result = numbersOnScreen * 0.01
-        }
-            
-            //UserChoice1 == "Gramme g"
-        else if userChoice1 == "Gramme g" && userChoice2 == "Kilogramme kg"
-        {
-            result = numbersOnScreen * 0.001
-        }
-            
-        else if userChoice1 == "Gramme g" && userChoice2 == "Gramme g"
-        {
-            result = numbersOnScreen
-        }
-        else if userChoice1 == "Gramme g" && userChoice2 == "Milligramme mg"
-        {
-            result = numbersOnScreen * 1000
-        }
-        else if userChoice1 == "Gramme g" && userChoice2 == "Microgramme µg"
-        {
-            result = numbersOnScreen * 1000000
-        }
-        else if userChoice1 == "Gramme g" && userChoice2 == "Quintal q"
-        {
-            result = numbersOnScreen * 0.00001
-        }
-            
-            //UserChoice1 == "Milligramme mg"
-        else if userChoice1 == "Milligramme mg" && userChoice2 == "Kilogramme kg"
-        {
-            result = numbersOnScreen * 0.000001
-        }
-        else if userChoice1 == "Milligramme mg" && userChoice2 == "Gramme g"
-        {
-            result = numbersOnScreen * 0.001
-        }
-        else if userChoice1 == "Milligramme mg" && userChoice2 == "Milligramme mg"
-        {
-            result = numbersOnScreen
-        }
-        else if userChoice1 == "Milligramme mg" && userChoice2 == "Microgramme µg"
-        {
-            result = numbersOnScreen * 1000
-        }
-        else if userChoice1 == "Milligramme mg" && userChoice2 == "Quintal q"
-        {
-            result = numbersOnScreen * 0.00000001
-        }
-            
-            //UserChoice1 == "Microgramme µg"
-        else if userChoice1 == "Microgramme µg" && userChoice2 == "Kilogramme kg"
-        {
-            result = numbersOnScreen * 0.000000001
-        }
-        else if userChoice1 == "Microgramme µg" && userChoice2 == "Gramme g"
-        {
-            result = numbersOnScreen * 0.000001
-        }
-        else if userChoice1 == "Microgramme µg" && userChoice2 == "Milligramme mg"
-        {
-            result = numbersOnScreen * 0.001
-        }
-        else if userChoice1 == "Microgramme µg" && userChoice2 == "Microgramme µg"
-        {
-            result = numbersOnScreen
-        }
-        else if userChoice1 == "Microgramme µg" && userChoice2 == "Quintal q"
-        {
-            result = numbersOnScreen * 0.00000000001
-        }
-            
-            //UserChoice1 == "Quintal q"
-        else if userChoice1 == "Quintal q" && userChoice2 == "Kilogramme kg"
-        {
-            result = numbersOnScreen * 100
-        }
-        else if userChoice1 == "Quintal q" && userChoice2 == "Gramme g"
-        {
-            result = numbersOnScreen * 100000
-        }
-        else if userChoice1 == "Quintal q" && userChoice2 == "Milligramme mg"
-        {
-            result = numbersOnScreen * 100000000
-        }
-        else if userChoice1 == "Quintal q" && userChoice2 == "Microgramme µg"
-        {
-            result = numbersOnScreen * 100000000000
-        }
-        else if userChoice1 == "Quintal q" && userChoice2 == "Quintal q"
-        {
-            result = numbersOnScreen
-        }
- */
+        
         
         
     }
