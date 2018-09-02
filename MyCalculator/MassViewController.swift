@@ -66,12 +66,12 @@ class MassViewController: UIViewController, UIPickerViewDataSource, UIPickerView
                 dotCounter = 0;
             }
             numberLabel1.text = String(numberLabel1.text!.dropLast())
-            numbersOnScreen = Double(numberLabel1.text!)!
+            
             if numberLabel1.text == ""
             {
                 allClear()
             }
-            
+            numbersOnScreen = Double(numberLabel1.text!)!
         }
         
         else if sender.tag == 14    //Convert button Pressed
@@ -84,11 +84,11 @@ class MassViewController: UIViewController, UIPickerViewDataSource, UIPickerView
             if ceil(result) == result {
                 numberLabel2.text = String(Int(result))
                 
-            if (numberLabel2.text?.count)! >= 12
+            if (numberLabel2.text?.count)! >= 13
             {
                 let formatter = NumberFormatter()
                 formatter.numberStyle = .scientific
-                formatter.positiveFormat = "0.#######E0"
+                formatter.positiveFormat = "0.########E0"
                 formatter.exponentSymbol = "e"
                 if let scientificFormatted = formatter.string(for: result) {
                     numberLabel2.text = scientificFormatted  // "5e+2"
@@ -99,11 +99,11 @@ class MassViewController: UIViewController, UIPickerViewDataSource, UIPickerView
             else
             {
                 numberLabel2.text = String(result)
-                if (numberLabel2.text?.count)! >= 12
+                if (numberLabel2.text?.count)! >= 13
                 {
                     let formatter = NumberFormatter()
                     formatter.numberStyle = .scientific
-                    formatter.positiveFormat = "0.#######E0"
+                    formatter.positiveFormat = "0.########E0"
                     formatter.exponentSymbol = "e"
                     if let scientificFormatted = formatter.string(for: result) {
                         numberLabel2.text = scientificFormatted  // "5e+2"
