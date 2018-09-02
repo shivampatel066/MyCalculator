@@ -1,5 +1,5 @@
 //
-//  LengthViewController.swift
+//  TemperatureViewController.swift
 //  MyCalculator
 //
 //  Created by Shivam on 02/09/18.
@@ -8,42 +8,40 @@
 
 import UIKit
 
-class LengthViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class TemperatureViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
+    
     
     //MARK:Properties
     
     @IBOutlet weak var menu: UIButton!
-    @IBOutlet weak var pickerView: UIPickerView!
-    @IBOutlet weak var numberLabel1: UILabel!
     @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var pickerView2: UIPickerView!
-    @IBOutlet weak var numberLabel2: UILabel!
+    @IBOutlet weak var pickerView: UIPickerView!
+    
     @IBOutlet weak var label2: UILabel!
+    @IBOutlet weak var pickerView2: UIPickerView!
+    
+    @IBOutlet weak var numberLabel2: UILabel!
+    @IBOutlet weak var numberLabel1: UILabel!
+    
+    
     
     //MARK:Variables
-    let units = ["Kilometre km", "Metre m", "Centimetre cm", "Millimetre mm", "Foot ft", "Inch in"]
-    let unitsDictionary: [String : Int] = [
-        "Kilometre km" : 0,
-        "Metre m" : 1,
-        "Centimetre cm" : 2,
-        "Millimetre mm" : 3,
-        "Foot ft" : 4,
-        "Inch in" : 5
-    ] //Dictionary to store the Units and Respective Numbers
+    let units = ["Celsius °C", "Fahrenheit °F", "Kelvin K", "Rankine °R", "Réaumur °Re"]
+   
     var numbersOnScreen: Double = 0;
     var dotCounter: Double = 0;
     var result: Double = 0;
     var userChoice1 = ""
     var userChoice2 = ""
     
-    let converterMultiplierArray: [[Double]] = [[1, 1000, 100000, 1000000, 3280.8399, 39370.0787], [0.001, 1, 100, 1000, 3.2808399, 39.3700787], [0.00001, 0.01, 1, 10, 0.032808399, 0.393700787], [0.000001, 0.001, 0.1, 1, 0.0032808399, 0.0393700787], [0.0003048, 0.3048, 30.48, 304.8, 1, 12], [2.54e-5, 0.0254, 2.54, 25.4, 0.0833333333, 1]];
+  
     
-
-    //2D Array to Store the Conversion Multipliers.
+    
+    
+    
     
     
     @IBAction func Numbers(_ sender: UIButton) {
-        
         if numberLabel1.text?.count == 16 //Fatel Error Nutralizer
         {}
         else{
@@ -57,7 +55,6 @@ class LengthViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     
     @IBAction func Buttons(_ sender: UIButton) {
-        
         if sender.tag == 11 //Dot Button
         {
             if dotCounter == 0
@@ -99,7 +96,7 @@ class LengthViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             userChoice1 = label.text!
             userChoice2 = label2.text!
             
-           
+            
             
             convertUnits()
             
@@ -143,7 +140,6 @@ class LengthViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     
     
-    
     //MARK:Utility Functions
     func allClear() -> Void {
         numberLabel1.text = ""
@@ -155,8 +151,127 @@ class LengthViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     func convertUnits() -> Void
     {
-        result = numbersOnScreen * converterMultiplierArray[unitsDictionary[userChoice1]!][unitsDictionary[userChoice2]!]
-        
+        //UserChoice1 == "Celsius °C"
+        if userChoice1 == "Celsius °C"
+        {
+            if userChoice2 == "Celsius °C"
+            {
+            result = numbersOnScreen;
+            }
+            else if userChoice2 == "Fahrenheit °F"
+            {
+            result = (numbersOnScreen * 1.8) + 32
+            }
+            else if userChoice2 == "Kelvin K"
+            {
+            result = numbersOnScreen + 273.15
+            }
+            else if userChoice2 == "Rankine °R"
+            {
+            result = (numbersOnScreen + 273.15) * 1.8
+            }
+            else if userChoice2 == "Réaumur °Re"
+            {
+            result = numbersOnScreen * 0.8
+            }
+        }
+        //UserChoice1 == "Fahrenheit °F"
+        if userChoice1 == "Fahrenheit °F"
+        {
+            if userChoice2 == "Celsius °C"
+            {
+                result = (numbersOnScreen - 32) / 1.8;
+            }
+            else if userChoice2 == "Fahrenheit °F"
+            {
+                result = numbersOnScreen
+            }
+            else if userChoice2 == "Kelvin K"
+            {
+                result = (numbersOnScreen + 459.67) / 1.8
+            }
+            else if userChoice2 == "Rankine °R"
+            {
+                result = numbersOnScreen + 459.67
+            }
+            else if userChoice2 == "Réaumur °Re"
+            {
+                result = (numbersOnScreen - 32) / 2.25
+            }
+        }
+         //UserChoice1 == "Kelvin K"
+        if userChoice1 == "Kelvin K"
+        {
+            if userChoice2 == "Celsius °C"
+            {
+                result = numbersOnScreen - 273.15;
+            }
+            else if userChoice2 == "Fahrenheit °F"
+            {
+                result = (numbersOnScreen * 1.8) - 459.67
+            }
+            else if userChoice2 == "Kelvin K"
+            {
+                result = numbersOnScreen
+            }
+            else if userChoice2 == "Rankine °R"
+            {
+                result = numbersOnScreen * 1.8
+            }
+            else if userChoice2 == "Réaumur °Re"
+            {
+                result = (numbersOnScreen - 273.15) * 0.8
+            }
+        }
+            //UserChoice1 == "Rankine °R"
+        if userChoice1 == "Rankine °R"
+        {
+            if userChoice2 == "Celsius °C"
+            {
+                result = (numbersOnScreen - 32 - 459.67) / 1.8;
+            }
+            else if userChoice2 == "Fahrenheit °F"
+            {
+                result = numbersOnScreen - 459.67
+            }
+            else if userChoice2 == "Kelvin K"
+            {
+                result = numbersOnScreen / 1.8
+            }
+            else if userChoice2 == "Rankine °R"
+            {
+                result = numbersOnScreen
+            }
+            else if userChoice2 == "Réaumur °Re"
+            {
+                result = (numbersOnScreen - 491.67) / 2.25
+            }
+        }
+            
+            //UserChoice1 == "Réaumur °Re"
+        if userChoice1 == "Réaumur °Re"
+        {
+            if userChoice2 == "Celsius °C"
+            {
+                result = numbersOnScreen * 1.25
+            }
+            else if userChoice2 == "Fahrenheit °F"
+            {
+                result = (numbersOnScreen * 2.25) + 32
+            }
+            else if userChoice2 == "Kelvin K"
+            {
+                result = (numbersOnScreen * 1.25) + 273.15
+            }
+            else if userChoice2 == "Rankine °R"
+            {
+                result = (numbersOnScreen * 2.25) + 32 + 459.67
+            }
+            else if userChoice2 == "Réaumur °Re"
+            {
+                result = numbersOnScreen
+            }
+        }
         
         
     }
@@ -202,10 +317,12 @@ class LengthViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         
     }
     
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.applyRoundCorner(menu)
+
         // Do any additional setup after loading the view.
     }
 

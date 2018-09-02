@@ -145,7 +145,8 @@ class VolumeViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                 }
             }
             
-            
+            numberLabel2.adjustsFontSizeToFitWidth = true
+            numberLabel2.minimumScaleFactor = 0.2
             
         }
         

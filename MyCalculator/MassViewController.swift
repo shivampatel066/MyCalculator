@@ -132,7 +132,8 @@ class MassViewController: UIViewController, UIPickerViewDataSource, UIPickerView
                 }
             }
         
-            
+            numberLabel2.adjustsFontSizeToFitWidth = true
+            numberLabel2.minimumScaleFactor = 0.2
             
         }
         
