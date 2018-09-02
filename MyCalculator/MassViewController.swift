@@ -33,6 +33,8 @@ class MassViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         if numberLabel1.text?.count == 16 //Fatel Error Nutralizer
         {}
         else{
+            numberLabel1.adjustsFontSizeToFitWidth = true
+            numberLabel1.minimumScaleFactor = 0.2
             numberLabel1.text = numberLabel1.text! + String((sender as AnyObject).tag - 1)
             numbersOnScreen = Double(numberLabel1.text!)!
         }
@@ -46,6 +48,8 @@ class MassViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         {
             if dotCounter == 0
             {
+                numberLabel1.adjustsFontSizeToFitWidth = true
+                numberLabel1.minimumScaleFactor = 0.2
                 numberLabel1.text = numberLabel1.text! + "."
                 dotCounter = dotCounter+1;
             }
@@ -81,7 +85,10 @@ class MassViewController: UIViewController, UIPickerViewDataSource, UIPickerView
             
             convertUnits()
             
-            if ceil(result) == result {
+            if ceil(result) == result && result < 5.5589984565e+18 //To Nutralise Fatel Error number bigger than Int.max while converting.
+            {
+                print (result)
+                
                 numberLabel2.text = String(Int(result))
                 
             if (numberLabel2.text?.count)! >= 13
