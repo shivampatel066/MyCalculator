@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4022D6EA213BE0A40010659F /* VolumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022D6E9213BE0A40010659F /* VolumeViewController.swift */; };
 		4022D6EC213BED050010659F /* TemperatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022D6EB213BED050010659F /* TemperatureViewController.swift */; };
+		4022D6EE213C0B2C0010659F /* SpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022D6ED213C0B2C0010659F /* SpeedViewController.swift */; };
 		40A6A1E920FCBD8700F929EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A6A1E820FCBD8700F929EF /* AppDelegate.swift */; };
 		40A6A1EB20FCBD8700F929EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A6A1EA20FCBD8700F929EF /* ViewController.swift */; };
 		40A6A1EE20FCBD8700F929EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40A6A1EC20FCBD8700F929EF /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		4022D6E9213BE0A40010659F /* VolumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeViewController.swift; sourceTree = "<group>"; };
 		4022D6EB213BED050010659F /* TemperatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureViewController.swift; sourceTree = "<group>"; };
+		4022D6ED213C0B2C0010659F /* SpeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedViewController.swift; sourceTree = "<group>"; };
 		40A6A1E520FCBD8700F929EF /* MyCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40A6A1E820FCBD8700F929EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40A6A1EA20FCBD8700F929EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				40D30FDA213BB87E005FDF2E /* LengthViewController.swift */,
 				4022D6E9213BE0A40010659F /* VolumeViewController.swift */,
 				4022D6EB213BED050010659F /* TemperatureViewController.swift */,
+				4022D6ED213C0B2C0010659F /* SpeedViewController.swift */,
 				40A6A1EC20FCBD8700F929EF /* Main.storyboard */,
 				40A6A1EF20FCBD8C00F929EF /* Assets.xcassets */,
 				40A6A1F120FCBD8D00F929EF /* LaunchScreen.storyboard */,
@@ -159,6 +162,7 @@
 				40A6A1EB20FCBD8700F929EF /* ViewController.swift in Sources */,
 				40DD08802134535C001D9D95 /* CurrencyViewController.swift in Sources */,
 				40DD087E21343D6D001D9D95 /* MenuViewController.swift in Sources */,
+				4022D6EE213C0B2C0010659F /* SpeedViewController.swift in Sources */,
 				40A6A1E920FCBD8700F929EF /* AppDelegate.swift in Sources */,
 				4022D6EC213BED050010659F /* TemperatureViewController.swift in Sources */,
 			);
