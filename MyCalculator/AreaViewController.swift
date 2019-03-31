@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 12.0, *)
 class AreaViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     //MARK:Properties

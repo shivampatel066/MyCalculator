@@ -169,11 +169,7 @@ class VolumeViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         
     }
     
-    func applyRoundCorner(_ Object:AnyObject)
-    {
-        Object.layer.cornerRadius = Object.frame.size.width / 2
-        Object.layer.masksToBounds = true
-    }
+ 
     
     //PICKERVIEW
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -215,7 +211,7 @@ class VolumeViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.applyRoundCorner(menu)
+        
 
         // Do any additional setup after loading the view.
     }

@@ -19,7 +19,6 @@ class CurrencyViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     @IBOutlet weak var input: UITextField!
     @IBOutlet weak var pickerView: UIPickerView!
-    
     @IBOutlet weak var output: UILabel!
     
     //MARK:PICKER VIEW
@@ -40,6 +39,9 @@ class CurrencyViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     //MARK:BUTTON Action
     
     @IBAction func convertAction(_ sender: Any) {
+        
+        
+        
         if (input.text != "")
         {
               output.text = String(Double(input.text!)! * activeCurrency)
@@ -51,15 +53,11 @@ class CurrencyViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     
     //MARK:Functions
-    func applyRoundCorner(_ Object:AnyObject)
-    {
-        Object.layer.cornerRadius = Object.frame.size.width / 2
-        Object.layer.masksToBounds = true
-    }
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.applyRoundCorner(menu)
+        
         //MARK:GETTING DATA
         let url = URL(string: "http://data.fixer.io/api/latest?access_key=6cc6ecea03cae41f586514e9b4cde241")
         
@@ -76,6 +74,7 @@ class CurrencyViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                         
                         if let rates = myJson["rates"] as? NSDictionary
                         {
+                            print(rates)
                             for (key, value) in rates
                             {
                                 self.myCurrency.append((key as? String)!)

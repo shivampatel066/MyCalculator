@@ -276,11 +276,7 @@ class TemperatureViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
     }
     
-    func applyRoundCorner(_ Object:AnyObject)
-    {
-        Object.layer.cornerRadius = Object.frame.size.width / 2
-        Object.layer.masksToBounds = true
-    }
+   
     
     //PICKERVIEW
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -321,7 +317,7 @@ class TemperatureViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.applyRoundCorner(menu)
+       
 
         // Do any additional setup after loading the view.
     }

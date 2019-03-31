@@ -26,6 +26,7 @@ var tempPerformingMathCounter = 0
 
 
 
+@available(iOS 12.0, *)
 class ViewController: UIViewController {
     
     

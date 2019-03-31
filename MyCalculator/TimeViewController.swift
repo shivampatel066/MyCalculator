@@ -181,6 +181,7 @@ class TimeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
     }
     
+    @available(iOS 12.0, *)
     func applyRoundCorner(_ Object:AnyObject)
     {
         Object.layer.cornerRadius = Object.frame.size.width / 2
@@ -228,9 +229,14 @@ class TimeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.applyRoundCorner(menu)
+        if #available(iOS 12.0, *) {
+            self.applyRoundCorner(menu)
+        } else {
+            // Fallback on earlier versions
+        }
 
         // Do any additional setup after loading the view.
     }

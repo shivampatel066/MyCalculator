@@ -163,7 +163,7 @@ class LengthViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     func applyRoundCorner(_ Object:AnyObject)
     {
-        Object.layer.cornerRadius = Object.frame.size.width / 2
+        Object.layer.cornerRadius = menu.frame.size.width / 2
         Object.layer.masksToBounds = true
     }
     
